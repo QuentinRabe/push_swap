@@ -6,7 +6,7 @@
 /*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:54 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/24 16:04:20 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/24 18:50:02 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,15 @@
 # include "../ft_printf/ft_printf.h"
 # include <limits.h>
 
+typedef struct s_stack_a
+{
+	struct s_stack_a	*prev;
+	struct s_stack_a	*next;
+	int					num;
+}	t_stack_a;
+
 /*-------------ERRORS-------------*/
-void	check_args(int ac, char **av);
+char	**check_args(int ac, char **av);
 void	free_array(char ***array);
 void	check_if_valide_input(char *str);
 #endif
