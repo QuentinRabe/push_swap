@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 07:04:59 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/22 07:10:24 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:47:44 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <string.h>
-// #include <stdio.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
@@ -28,10 +26,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-// int	main()
-// {
-// 	char	s1[] = "bonjour";
-// 	char	s2[] = "bonsoir";
-// 	printf("memcmp = %d\n", memcmp(s1, s2, 0));
-// 	printf("ft_memcmp = %d\n", ft_memcmp(s1, s2, 0));
-// }

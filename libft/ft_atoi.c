@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:16:41 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/24 07:30:29 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:46:06 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <stdlib.h>
 
 int	ft_atoi(const char *nptr)
 {
@@ -39,10 +37,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return ((int)(sign * nbr));
 }
-
-// int	main()
-// {
-// 	char	str[] = "      -12345asd478";
-// 	printf("ATOI = %d\n", atoi(str));
-// 	printf("FT_ATOI = %d\n", ft_atoi(str));
-// }

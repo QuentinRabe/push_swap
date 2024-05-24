@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 09:24:33 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/24 08:12:29 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:50:14 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		*str++ = *s++;
 	return (str_ptr);
 }
-
-// int	main()
-// {
-// 	char s[] = "";
-// 	printf("%s\n", ft_substr(s, 100, 100));
-// }

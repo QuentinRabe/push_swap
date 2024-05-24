@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 14:14:50 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/24 07:36:05 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:49:23 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dst_len + i] = '\0';
 	return (total_len);
 }
-// int main()
-// {
-// 	char	dest[] = "Hello";
-// 	char	src[] = " world";
-
-// 	size_t	size = strlcat(dest, src, 2);
-// 	printf("%zu\n", size);
-// 	printf("%s\n", dest);
-// }

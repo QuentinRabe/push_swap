@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 07:17:29 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/21 08:39:58 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:50:19 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,3 @@ int	ft_tolower(int c)
 		c += 32;
 	return (c);
 }
-// int	main()
-// {
-// 	printf("%c\n", ft_tolower('4'));
-// 	printf("%c\n", tolower('4'));
-// }

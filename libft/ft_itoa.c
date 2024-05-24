@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 10:07:13 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/24 07:43:30 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:47:04 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
 
 static int	count_digit(int n)
 {
@@ -95,9 +94,3 @@ char	*ft_itoa(int n)
 	itoa_hlp(&nbr, &i, str, n);
 	return (str);
 }
-
-// int	main()
-// {
-// 	int	n = 145;
-// 	printf("%d = %s\n", n, ft_itoa(n));
-// }

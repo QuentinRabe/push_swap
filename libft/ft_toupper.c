@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 07:12:45 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/21 08:33:46 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:50:25 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,3 @@ int	ft_toupper(int c)
 		c -= 32;
 	return (c);
 }
-
-// int	main()
-// {
-// 	printf("%c\n", ft_toupper(']'));
-// }

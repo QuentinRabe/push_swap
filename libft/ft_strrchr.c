@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 07:32:58 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/24 07:38:43 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:50:00 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <string.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -27,11 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-// int	main()
-// {
-// 	int	c = 'r';
-// 	printf("%s\n", strrchr(str, c));
-// 	printf("%s\n", ft_strrchr(str, c));
-// 	printf("%lu\n", strlen(str));
-// }

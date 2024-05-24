@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 07:23:52 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/21 13:35:52 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:48:53 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,3 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)(s + i));
 	return (NULL);
 }
-// int	main()
-// {
-// 	const char	str[] = "Bonjour le monde ! Je suis Quentin";
-// 	int	c = '!';
-// 	printf("%s\n", strchr(str, c));
-// 	printf("%s\n", ft_strchr(str, c));
-// }

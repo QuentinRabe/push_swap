@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 13:17:35 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/24 07:28:18 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:50:06 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimed[i] = '\0';
 	return (trimed);
 }
-
-// #include <stdio.h>
-
-// int	main()
-// {
-// 	char	str[] = "     Bonjour le monde     ";
-// 	char	*trimed =  ft_strtrim(str, " ");
-
-// 	printf("Before trim = %s\nAfter trim = %s\n", str, trimed);
-// }

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 07:18:47 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/24 10:52:15 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:48:47 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
 
 static int	token_count(char const *s, char c)
 {
@@ -86,15 +85,3 @@ char	**ft_split(char const *s, char c)
 	split.i = 0;
 	return (split_helper(split, s, c));
 }
-
-// int	main()
-// {
-// 	char	str[] = "hello";
-// 	char	**splited = ft_split(str, ' ');
-// 	int		i = 0;
-// 	while (splited[i] != NULL)
-// 	{
-// 		printf("%s\n", splited[i]);
-// 		i++;
-// 	}
-// }

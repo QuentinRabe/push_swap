@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 10:00:16 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/21 08:38:15 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:46:46 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,3 @@ int	ft_isdigit(int c)
 		return (0);
 	return (1);
 }
-// int	main (void)
-// {
-// 	int	i = 0;
-
-// 	while (i < 256)
-// 	{
-// 		printf("%c = %d\n", i, ft_isdigit(i));
-// 		i++;
-// 	}
-// }

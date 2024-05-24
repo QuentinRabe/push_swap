@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 15:22:45 by arabefam          #+#    #+#             */
-/*   Updated: 2024/02/24 07:35:26 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/24 10:49:07 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
 
 char	*ft_strdup(const char *s)
 {
@@ -32,12 +29,3 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
-
-// int	main()
-// {
-// 	char	str[] = "Bonjour Mr Quentin Lovegood";
-// 	char	*dup = ft_strdup(str);
-// 	char	*dupreal = strdup(str);
-// 	printf("ft_strdup = %s\n", dup);
-// 	printf("strdup = %s\n", dupreal);
-// }
