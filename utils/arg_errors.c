@@ -6,7 +6,7 @@
 /*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:16 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/24 16:11:27 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/24 18:49:39 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	stock_inputs(char **str, char **av)
 	}
 }
 
-void	check_args(int ac, char **av)
+char	**check_args(int ac, char **av)
 {
 	char	*args;
 	char	**splited_args;
@@ -89,4 +89,5 @@ void	check_args(int ac, char **av)
 	split_args(&splited_args, &args);
 	check_if_int(splited_args);
 	check_duplicate_input(splited_args);
+	return (splited_args);
 }
