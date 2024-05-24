@@ -6,7 +6,7 @@
 /*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:16:41 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/24 12:43:52 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/24 13:11:35 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 long	ft_atoi(const char *nptr)
 {
 	char			*ptr;
-	long				sign;
+	long			sign;
 	unsigned long	nbr;
 
 	sign = 1;
