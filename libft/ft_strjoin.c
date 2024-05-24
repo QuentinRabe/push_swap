@@ -6,7 +6,7 @@
 /*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 15:26:49 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/24 10:49:17 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/24 12:14:22 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,23 @@ static void	st_strcat(char const *s1, char const *s2, char	*joined)
 	joined[j] = '\0';
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	size_t	len;
 	char	*joined;
 
+	if (!s1)
+	{
+		s1 = (char *) malloc(sizeof(char));
+		if (!s1)
+			return (NULL);
+		*s1 = '\0';
+	}
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	joined = (char *) malloc((len) * sizeof(char));
 	if (!joined)
 		return (NULL);
 	st_strcat(s1, s2, joined);
+	free(s1);
 	return (joined);
 }
