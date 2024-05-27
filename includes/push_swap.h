@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:54 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/24 19:58:51 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/27 08:51:59 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ char	**check_args(int ac, char **av);
 void	free_array(char ***array);
 void	check_if_valide_input(char *str);
 /*-------------STACK_A-------------*/
-void	create_stack_a(t_stack **head, char **array);
 void	free_list(t_stack **head);
 #endif
