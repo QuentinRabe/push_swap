@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:54 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/27 10:49:25 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:11:25 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,6 @@ int		count_node(t_stack *head);
 int		swap_a(t_stack **a);
 int		swap_b(t_stack **b);
 int		swap_a_swap_b(t_stack **a, t_stack **b);
+int		push_b(t_stack **a, t_stack **b);
+int		push_a(t_stack **a, t_stack **b);
 #endif
