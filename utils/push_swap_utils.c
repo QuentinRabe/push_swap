@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:29:44 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/27 10:50:27 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/28 10:07:33 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	count_node(t_stack *head)
 	int		i;
 
 	current = head;
-	i = -1;
+	i = 0;
 	while (current)
 	{
 		current = current->next;
-		++i;
+		i++;
 	}
 	return (i);
 }
