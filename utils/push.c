@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 09:27:33 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/28 10:13:10 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/29 12:34:29 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	push_b(t_stack **a, t_stack **b)
+char	*push_b(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
@@ -25,12 +25,11 @@ int	push_b(t_stack **a, t_stack **b)
 		if (count_node(*b))
 			(*b)->prev = tmp;
 		*b = tmp;
-		return (ft_printf("pb\n"));
 	}
-	return (0);
+	return ("pb\n");
 }
 
-int	push_a(t_stack **a, t_stack **b)
+char	*push_a(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
@@ -43,7 +42,6 @@ int	push_a(t_stack **a, t_stack **b)
 		if (count_node(*a))
 			(*a)->prev = tmp;
 		*a = tmp;
-		return (ft_printf("pa\n"));
 	}
-	return (0);
+	return ("pa\n");
 }

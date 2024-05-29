@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:54 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/28 10:11:25 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/29 12:31:57 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,14 @@ void	free_list(t_stack **head);
 void	init_stack_a(t_stack **a, char **array);
 /*-------------UTILS-------------*/
 int		count_node(t_stack *head);
+t_stack	*get_last_node(t_stack *first);
 /*-------------INSTRUCTIONS-------------*/
-int		swap_a(t_stack **a);
-int		swap_b(t_stack **b);
-int		swap_a_swap_b(t_stack **a, t_stack **b);
-int		push_b(t_stack **a, t_stack **b);
-int		push_a(t_stack **a, t_stack **b);
+char	*swap_a(t_stack **a);
+char	*swap_b(t_stack **b);
+char	*swap_a_swap_b(t_stack **a, t_stack **b);
+char	*push_b(t_stack **a, t_stack **b);
+char	*push_a(t_stack **a, t_stack **b);
+char	*rotate_a(t_stack **a);
+char	*rotate_b(t_stack **b);
+char	*rotate_a_b(t_stack **a, t_stack **b);
 #endif
