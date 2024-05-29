@@ -6,7 +6,7 @@
 /*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:54 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/29 17:03:09 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/29 22:15:36 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	init_stack_a(t_stack **a, char **array);
 /*-------------UTILS-------------*/
 int		count_node(t_stack *head);
 t_stack	*get_last_node(t_stack *first);
+int		sorted(t_stack *a);
 /*-------------INSTRUCTIONS-------------*/
 char	*sa(t_stack **a);
 char	*sb(t_stack **b);
