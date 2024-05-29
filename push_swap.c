@@ -6,7 +6,7 @@
 /*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:43 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/29 22:16:15 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/29 22:28:02 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,12 @@ int	main(int ac, char **av)
 	b = NULL;
 	inputs = check_args(ac, av);
 	init_stack_a(&a, inputs);
+	ft_printf("---INITIAL---\n");
+	print_stacks(a, b);
+	if (count_node(a) == 2)
+		two_sort(&a);
+	ft_printf("---FINAL---\n");
+	print_stacks(a, b);
 	if (sorted(a))
 		ft_printf("OK\n");
 	else
