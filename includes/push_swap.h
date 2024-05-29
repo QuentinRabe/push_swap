@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:54 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/29 12:31:57 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/29 17:03:09 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@ void	init_stack_a(t_stack **a, char **array);
 int		count_node(t_stack *head);
 t_stack	*get_last_node(t_stack *first);
 /*-------------INSTRUCTIONS-------------*/
-char	*swap_a(t_stack **a);
-char	*swap_b(t_stack **b);
-char	*swap_a_swap_b(t_stack **a, t_stack **b);
-char	*push_b(t_stack **a, t_stack **b);
-char	*push_a(t_stack **a, t_stack **b);
-char	*rotate_a(t_stack **a);
-char	*rotate_b(t_stack **b);
-char	*rotate_a_b(t_stack **a, t_stack **b);
+char	*sa(t_stack **a);
+char	*sb(t_stack **b);
+char	*ss(t_stack **a, t_stack **b);
+char	*pa(t_stack **a, t_stack **b);
+char	*pb(t_stack **a, t_stack **b);
+char	*ra(t_stack **a);
+char	*rb(t_stack **b);
+char	*rr(t_stack **a, t_stack **b);
+char	*rra(t_stack **a);
+char	*rrb(t_stack **b);
+char	*rrr(t_stack **a, t_stack **b);
 #endif
