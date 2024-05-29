@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 09:27:33 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/29 12:34:29 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:45:13 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-char	*push_b(t_stack **a, t_stack **b)
+char	*pb(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 
@@ -29,7 +29,7 @@ char	*push_b(t_stack **a, t_stack **b)
 	return ("pb\n");
 }
 
-char	*push_a(t_stack **a, t_stack **b)
+char	*pa(t_stack **a, t_stack **b)
 {
 	t_stack	*tmp;
 

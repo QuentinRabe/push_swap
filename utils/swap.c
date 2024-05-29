@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:26:23 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/29 12:34:01 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:44:46 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-char	*swap_a(t_stack **a)
+char	*sa(t_stack **a)
 {
 	int		nodes;
 	t_stack	*first;
@@ -32,7 +32,7 @@ char	*swap_a(t_stack **a)
 	return ("sb\n");
 }
 
-char	*swap_b(t_stack **b)
+char	*sb(t_stack **b)
 {
 	int		nodes;
 	t_stack	*first;
@@ -52,7 +52,7 @@ char	*swap_b(t_stack **b)
 	return ("sb\n");
 }
 
-char	*swap_a_swap_b(t_stack **a, t_stack **b)
+char	*ss(t_stack **a, t_stack **b)
 {
 	swap_a(a);
 	swap_b(b);

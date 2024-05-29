@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 12:02:42 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/29 12:31:15 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/05/29 16:45:02 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-char	*rotate_a(t_stack **a)
+char	*ra(t_stack **a)
 {
 	t_stack	*tmp;
 	t_stack	*last;
@@ -30,7 +30,7 @@ char	*rotate_a(t_stack **a)
 	return ("ra\n");
 }
 
-char	*rotate_b(t_stack **b)
+char	*rb(t_stack **b)
 {
 	t_stack	*tmp;
 	t_stack	*last;
@@ -48,7 +48,7 @@ char	*rotate_b(t_stack **b)
 	return ("rb\n");
 }
 
-char	*rotate_a_b(t_stack **a, t_stack **b)
+char	*rr(t_stack **a, t_stack **b)
 {
 	rotate_a(a);
 	rotate_b(b);
