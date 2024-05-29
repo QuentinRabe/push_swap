@@ -6,7 +6,7 @@
 /*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:26:23 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/29 16:44:46 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/29 16:52:46 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*sb(t_stack **b)
 
 char	*ss(t_stack **a, t_stack **b)
 {
-	swap_a(a);
-	swap_b(b);
+	sa(a);
+	sb(b);
 	return ("ss\n");
 }

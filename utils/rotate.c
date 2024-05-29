@@ -6,7 +6,7 @@
 /*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 12:02:42 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/29 16:45:02 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/29 16:52:28 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*rb(t_stack **b)
 
 char	*rr(t_stack **a, t_stack **b)
 {
-	rotate_a(a);
-	rotate_b(b);
+	ra(a);
+	rb(b);
 	return ("rr\n");
 }
