@@ -6,7 +6,7 @@
 /*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:26:23 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/29 16:52:46 by quentin          ###   ########.fr       */
+/*   Updated: 2024/05/29 22:28:46 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*sa(t_stack **a)
 		(*a)->prev = NULL;
 		(*a)->next = first;
 	}
-	return ("sb\n");
+	return ("sa\n");
 }
 
 char	*sb(t_stack **b)
