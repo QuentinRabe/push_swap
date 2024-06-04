@@ -3,42 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:43 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/29 22:28:02 by quentin          ###   ########.fr       */
+/*   Updated: 2024/06/04 12:47:40 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	print_stacks(t_stack *a, t_stack *b)
+void	print_stacks(t_stack *head)
 {
-	t_stack	*head_a;
-	t_stack	*head_b;
+	t_stack	*current;
 
-	head_a = a;
-	head_b = b;
-	if (head_a)
+	current = head;
+	if (current)
 	{
-		while (head_a)
+		while (current)
 		{
-			ft_printf("[ %d ]\t", head_a->num);
-			head_a = head_a->next;
+			ft_printf("%d\t[%d]\t", current->num, current->index);
+			if (current->center == 'u')
+				ft_printf("'IS UP'\n");
+			else
+				ft_printf("'IS DOWN'\n");
+			current = current->next;
 		}
-		ft_printf("%d nodes\n", count_node(a));
 	}
-	ft_putchar_fd('\n', 1);
-	if (head_b)
-	{
-		while (head_b)
-		{
-			ft_printf("[ %d ]\t", head_b->num);
-			head_b = head_b->next;
-		}
-		ft_printf("%d nodes\n", count_node(b));
-	}
-	ft_putchar_fd('\n', 1);
 }
 
 int	main(int ac, char **av)
@@ -51,16 +41,6 @@ int	main(int ac, char **av)
 	b = NULL;
 	inputs = check_args(ac, av);
 	init_stack_a(&a, inputs);
-	ft_printf("---INITIAL---\n");
-	print_stacks(a, b);
-	if (count_node(a) == 2)
-		two_sort(&a);
-	ft_printf("---FINAL---\n");
-	print_stacks(a, b);
-	if (sorted(a))
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
 	free_array(&inputs);
 	free_list(&a);
 	free_list(&b);
