@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 22:23:43 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/04 15:10:15 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/04 18:34:54 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	five_sort(t_stack **a, t_stack **b)
 {
-	pb(a, b);
-	pb(a, b);
+	ft_printf("%s",pb(a, b));
+	ft_printf("%s",pb(a, b));
 	three_sort(a);
 	find_target(*a, *b);
+	set_push_price(*a, *b);
+	start_sorting(a, b);
+	finish_sorting(a);
 }
 
 void	three_sort(t_stack **a)
