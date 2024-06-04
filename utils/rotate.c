@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 12:02:42 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/29 16:52:28 by quentin          ###   ########.fr       */
+/*   Updated: 2024/06/04 12:28:22 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*ra(t_stack **a)
 		tmp->prev = last;
 		tmp->next = NULL;
 	}
+	set_index_and_median(*a);
 	return ("ra\n");
 }
 
@@ -45,6 +46,7 @@ char	*rb(t_stack **b)
 		tmp->prev = last;
 		tmp->next = NULL;
 	}
+	set_index_and_median(*b);
 	return ("rb\n");
 }
 
@@ -52,5 +54,7 @@ char	*rr(t_stack **a, t_stack **b)
 {
 	ra(a);
 	rb(b);
+	set_index_and_median(*a);
+	set_index_and_median(*b);
 	return ("rr\n");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 09:27:33 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/29 16:45:13 by quentin          ###   ########.fr       */
+/*   Updated: 2024/06/04 12:28:45 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char	*pb(t_stack **a, t_stack **b)
 			(*b)->prev = tmp;
 		*b = tmp;
 	}
+	set_index_and_median(*b);
 	return ("pb\n");
 }
 
@@ -43,5 +44,6 @@ char	*pa(t_stack **a, t_stack **b)
 			(*a)->prev = tmp;
 		*a = tmp;
 	}
+	set_index_and_median(*a);
 	return ("pa\n");
 }
