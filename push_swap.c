@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:43 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/04 12:47:40 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:10:25 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	print_stacks(t_stack *head)
 	{
 		while (current)
 		{
-			ft_printf("%d\t[%d]\t", current->num, current->index);
+			ft_printf("%d\t[%d]\tTarget -> %d\t",
+				current->num, current->index, current->target);
 			if (current->center == 'u')
 				ft_printf("'IS UP'\n");
 			else
@@ -41,6 +42,14 @@ int	main(int ac, char **av)
 	b = NULL;
 	inputs = check_args(ac, av);
 	init_stack_a(&a, inputs);
+	set_index_and_median(a);
+	ft_printf("--INITIAL--\n");
+	print_stacks(a);
+	print_stacks(b);
+	five_sort(&a, &b);
+	ft_printf("--FINAL--\n");
+	print_stacks(a);
+	print_stacks(b);
 	free_array(&inputs);
 	free_list(&a);
 	free_list(&b);

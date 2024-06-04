@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:54 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/04 12:25:11 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/04 13:38:56 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_stack
 {
 	int				num;
 	int				index;
+	int				target;
 	char			center;
 	struct s_stack	*prev;
 	struct s_stack	*next;
@@ -41,6 +42,8 @@ void	two_sort(t_stack **a);
 void	set_index_and_median(t_stack *head);
 t_stack	*find_max(t_stack *head);
 void	three_sort(t_stack **a);
+void	find_target(t_stack *a, t_stack *b);
+void	five_sort(t_stack **a, t_stack **b);
 /*-------------INSTRUCTIONS-------------*/
 char	*sa(t_stack **a);
 char	*sb(t_stack **b);

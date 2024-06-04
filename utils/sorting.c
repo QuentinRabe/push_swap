@@ -6,11 +6,19 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 22:23:43 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/04 12:51:49 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:10:15 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	five_sort(t_stack **a, t_stack **b)
+{
+	pb(a, b);
+	pb(a, b);
+	three_sort(a);
+	find_target(*a, *b);
+}
 
 void	three_sort(t_stack **a)
 {
