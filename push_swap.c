@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:43 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/05 11:29:45 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/05 11:49:40 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int ac, char **av)
 	b = NULL;
 	inputs = check_args(ac, av);
 	init_stack_a(&a, inputs);
+	print_stacks(a);
 	free_array(&inputs);
 	free_list(&a);
 	free_list(&b);

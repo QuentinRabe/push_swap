@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_errors.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:16 by quentin           #+#    #+#             */
-/*   Updated: 2024/05/24 18:49:39 by quentin          ###   ########.fr       */
+/*   Updated: 2024/06/05 11:55:23 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_duplicate_input(char	**array)
 		{
 			if (array[j] && ft_atoi(array[i]) == ft_atoi(array[j]))
 			{
-				ft_printf("[ERROR] -> %s has a duplicate value.\n", array[i]);
+				print_error();
 				free_array(&array);
 				exit (1);
 			}
@@ -41,17 +41,9 @@ void	check_if_int(char **array)
 	i = -1;
 	while (array[++i])
 	{
-		if (ft_atoi(array[i]) > INT_MAX)
+		if (ft_atoi(array[i]) > INT_MAX || ft_atoi(array[i]) < INT_MIN)
 		{
-			ft_printf("[ERROR] -> %s is superior than %d\n",
-				array[i], INT_MAX);
-			free_array(&array);
-			exit (1);
-		}
-		if (ft_atoi(array[i]) < INT_MIN)
-		{
-			ft_printf("[ERROR] -> %s is inferior than %d\n",
-				array[i], INT_MIN);
+			print_error();
 			free_array(&array);
 			exit (1);
 		}
