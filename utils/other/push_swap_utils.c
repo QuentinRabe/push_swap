@@ -6,11 +6,11 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:29:44 by arabefam          #+#    #+#             */
-/*   Updated: 2024/06/05 11:44:22 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/05 12:29:22 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_stack	*find_min(t_stack *head)
 {

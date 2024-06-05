@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_helper.c                                      :+:      :+:    :+:   */
+/*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/24 13:02:13 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/04 09:39:37 by arabefam         ###   ########.fr       */
+/*   Created: 2024/05/29 22:23:43 by quentin           #+#    #+#             */
+/*   Updated: 2024/06/05 12:29:33 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-void	free_list(t_stack **head)
+void	two_sort(t_stack **a)
 {
-	t_stack	*current;
+	t_stack	*first;
 
-	current = NULL;
-	while (*head)
-	{
-		current = (*head)->next;
-		free(*head);
-		*head = current;
-	}
-	*head = NULL;
-}
-
-void	free_array(char ***array)
-{
-	int	i;
-
-	i = -1;
-	while ((*array)[++i])
-		free((*array)[i]);
-	free(*array);
-	*array = NULL;
+	first = *a;
+	if (first->num > first->next->num)
+		ft_printf("%s", sa(a));
 }

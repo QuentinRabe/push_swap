@@ -6,11 +6,11 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 15:48:26 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/05 11:58:18 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/05 12:28:36 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	print_error(void)
 {

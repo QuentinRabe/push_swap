@@ -6,11 +6,11 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 08:55:29 by arabefam          #+#    #+#             */
-/*   Updated: 2024/05/27 09:18:10 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/05 12:29:17 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_stack	*get_last_node(t_stack *first)
 {

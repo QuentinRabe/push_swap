@@ -6,11 +6,11 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 12:02:42 by arabefam          #+#    #+#             */
-/*   Updated: 2024/06/05 11:41:35 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/05 12:29:00 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 char	*ra(t_stack **a)
 {

@@ -6,11 +6,11 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:16 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/05 11:55:23 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/05 12:28:43 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	check_duplicate_input(char	**array)
 {
