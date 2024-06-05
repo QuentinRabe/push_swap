@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:54 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/05 11:54:32 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:21:15 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ int		sorted(t_stack *a);
 void	two_sort(t_stack **a);
 t_stack	*find_max(t_stack *head);
 t_stack	*find_min(t_stack *head);
+int		*int_array(t_stack *head);
+int		find_pivot(int *array, t_stack *head);
+int		*lis_array(int *arr, t_stack *head);
 /*-------------INSTRUCTIONS-------------*/
 char	*sa(t_stack **a);
 char	*sb(t_stack **b);
