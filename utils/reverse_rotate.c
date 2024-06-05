@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 16:44:12 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/04 12:29:57 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/05 11:40:58 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	*rra(t_stack **a)
 		if (last->prev)
 			last->prev->next = NULL;
 	}
-	set_index_and_median(*a);
 	return ("rra\n");
 }
 
@@ -46,7 +45,6 @@ char	*rrb(t_stack **b)
 		if (last->prev)
 			last->prev->next = NULL;
 	}
-	set_index_and_median(*b);
 	return ("rrb\n");
 }
 
@@ -54,7 +52,5 @@ char	*rrr(t_stack **a, t_stack **b)
 {
 	rra(a);
 	rrb(b);
-	set_index_and_median(*a);
-	set_index_and_median(*b);
 	return ("rrr\n");
 }
