@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_errors.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 12:06:16 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/05 12:28:43 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/06 11:10:56 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@ void	check_if_int(char **array)
 	int	i;
 
 	i = -1;
+	if (!array[0])
+	{
+		{
+			print_error();
+			free_array(&array);
+			exit (1);
+		}
+	}
 	while (array[++i])
 	{
 		if (ft_atoi(array[i]) > INT_MAX || ft_atoi(array[i]) < INT_MIN)

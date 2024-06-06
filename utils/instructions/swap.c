@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 09:26:23 by arabefam          #+#    #+#             */
-/*   Updated: 2024/06/05 12:29:05 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/06 09:30:11 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*sa(t_stack **a)
 		(*a)->prev = NULL;
 		(*a)->next = first;
 	}
+	update_data_lst(*a);
 	return ("sa\n");
 }
 
@@ -49,6 +50,7 @@ char	*sb(t_stack **b)
 		(*b)->prev = NULL;
 		(*b)->next = first;
 	}
+	update_data_lst(*b);
 	return ("sb\n");
 }
 

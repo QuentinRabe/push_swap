@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lis.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 13:05:54 by arabefam          #+#    #+#             */
-/*   Updated: 2024/06/05 14:31:52 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/06 10:44:03 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,37 @@ int	find_longest(int *lis, int len)
 			j++;
 		}
 	}
+	if (longest == INT_MAX)
+		return (0);
 	return (longest);
 }
 
-int	*sorted_sub_sequence(int *arr, int *lis, int *prev, int len)
+int	*sorted_sub_sequence(int *arr, t_utils *v, int *prev, int len)
 {
-	(void) arr;
-	(void) prev;
-	ft_printf("LONGEST->%d\n", find_longest(lis, len));
-	return (NULL);
+	int	*sub;
+	int	i;
+	int	j;
+
+	if (!find_longest(v->lis, len))
+		return (NULL);
+	sub = (int *) malloc((find_longest(v->lis, len)) * sizeof(int));
+	if (!sub)
+		return (NULL);
+	j = -1;
+	while (++j < len)
+	{
+		if (v->lis[j] == find_longest(v->lis, len))
+			break ;
+	}
+	i = find_longest(v->lis, len) - 1;
+	v->lis_len = find_longest(v->lis, len);
+	sub[i] = arr[j];
+	while (--i >= 0)
+	{
+		sub[i] = arr[prev[j]];
+		j = prev[j];
+	}
+	return (free(v->lis), free(prev), sub);
 }
 
 void	init_lis(int **lis, int **prev, int len)
@@ -59,29 +81,27 @@ void	init_lis(int **lis, int **prev, int len)
 	}
 }
 
-int	*lis_array(int *arr, t_stack *head)
+int	*lis_array(int *arr, t_stack *head, t_utils *v)
 {
 	int	i;
 	int	j;
-	int	*lis;
 	int	*prev;
 
-	init_lis(&lis, &prev, count_node(head));
+	init_lis(&(v->lis), &prev, count_node(head));
 	i = 1;
 	while (i < count_node(head))
 	{
 		j = 0;
 		while (j < i)
 		{
-			if (arr[i] > arr[j] && lis[i] < lis[j] + 1)
+			if (arr[i] > arr[j] && v->lis[i] < v->lis[j] + 1)
 			{
-				lis[i] = lis[j] + 1;
+				v->lis[i] = v->lis[j] + 1;
 				prev[i] = j;
 			}
 			j++;
 		}
 		i++;
 	}
-	sorted_sub_sequence(arr, lis, prev, count_node(head));
-	return (lis);
+	return (sorted_sub_sequence(arr, v, prev, count_node(head)));
 }

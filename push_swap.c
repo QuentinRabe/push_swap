@@ -3,28 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:43 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/05 14:10:17 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/06 17:22:25 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/push_swap.h"
 
-void	print_stacks(t_stack *head)
+void	freeing(t_utils *v, char **inputs, t_stack *a, t_stack *b)
 {
-	t_stack	*current;
-
-	current = head;
-	if (current)
-	{
-		while (current)
-		{
-			ft_printf("[%d]\n", current->num);
-			current = current->next;
-		}
-	}
+	free((v->array));
+	free((v->lis));
+	free_array(&inputs);
+	free_list(&a);
+	free_list(&b);
 }
 
 int	main(int ac, char **av)
@@ -32,29 +26,23 @@ int	main(int ac, char **av)
 	char		**inputs;
 	t_stack		*a;
 	t_stack		*b;
-	int			*array;
-	int			i;
-	int			*lis;
+	t_utils		vars;
 
 	a = NULL;
 	b = NULL;
 	inputs = check_args(ac, av);
 	init_stack_a(&a, inputs);
-	print_stacks(a);
-	array = int_array(a);
-	if (!array)
-		free(array);
-	i = -1;
-	while (++i < count_node(a))
-		ft_printf("tab[%d] = %d\n", i, array[i]);
-	ft_printf("Pivot = %d\n", find_pivot(array, a));
-	lis = lis_array(array, a);
-	i = -1;
-	while (++i < count_node(a))
-		ft_printf("lis[%d] = %d\n", i, lis[i]);
-	free(array);
-	free_array(&inputs);
-	free_list(&a);
-	free_list(&b);
+	update_data_lst(a);
+	if (sorted(a))
+		return (free_array(&inputs), free_list(&a), 0);
+	else if (count_node(a) == 2)
+		two_sort(&a);
+	else if (count_node(a) == 3)
+		three_sort(&a);
+	else if (count_node(a) == 5)
+		five_sort(&a, &b);
+	else
+		push_swap(&vars, &a, &b);
+	freeing(&vars, inputs, a, b);
 	return (0);
 }

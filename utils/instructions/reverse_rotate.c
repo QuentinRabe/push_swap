@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 16:44:12 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/05 12:28:55 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/06 09:29:24 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char	*rra(t_stack **a)
 		if (last->prev)
 			last->prev->next = NULL;
 	}
+	update_data_lst(*a);
 	return ("rra\n");
 }
 
@@ -45,6 +46,7 @@ char	*rrb(t_stack **b)
 		if (last->prev)
 			last->prev->next = NULL;
 	}
+	update_data_lst(*b);
 	return ("rrb\n");
 }
 

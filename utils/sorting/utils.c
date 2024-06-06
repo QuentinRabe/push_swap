@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 12:37:13 by arabefam          #+#    #+#             */
-/*   Updated: 2024/06/05 14:01:37 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/06 09:19:04 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+int	is_in_lis(int num, t_utils *v)
+{
+	int	i;
+
+	i = -1;
+	while (++i < v->lis_len)
+	{
+		if (num == v->lis[i])
+			return (1);
+	}
+	return (0);
+}
 
 int	*dup_array(int *arr, int len)
 {
