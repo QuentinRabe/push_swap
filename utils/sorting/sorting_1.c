@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:41:21 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/06 16:47:58 by quentin          ###   ########.fr       */
+/*   Updated: 2024/06/07 12:26:48 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void	to_top_cheapest_and_target(t_stack **a, t_stack **b, t_stack *cheap)
+{
+	while (*b != cheap && *a != cheap->target)
+	{
+		if (cheap->position == 'u' && cheap->target->position == 'u')
+			ft_printf("%s", rr(a, b));
+		if (cheap->position == 'd' && cheap->target->position == 'd')
+			ft_printf("%s", rrr(a, b));
+	}
+	if (*b != cheap)
+		to_top(b, cheap, 'b');
+	else if (*a != cheap->target)
+		to_top(a, cheap->target, 'a');
+}
 
 void	sort_descendante(t_stack **a, t_stack **b)
 {

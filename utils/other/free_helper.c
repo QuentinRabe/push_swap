@@ -6,7 +6,7 @@
 /*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 13:02:13 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/05 12:29:11 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/07 10:29:20 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ void	free_array(char ***array)
 
 	i = -1;
 	while ((*array)[++i])
+	{
 		free((*array)[i]);
+	}
 	free(*array);
 	*array = NULL;
 }

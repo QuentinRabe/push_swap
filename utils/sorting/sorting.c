@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 22:23:43 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/06 16:44:43 by quentin          ###   ########.fr       */
+/*   Updated: 2024/06/07 14:00:13 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,13 @@ void	three_sort(t_stack **a)
 	t_stack	*max;
 
 	max = find_max(*a);
-	if (max->index == 0)
+	if (max == *a)
 	{
 		ft_printf("%s", ra(a));
 		if ((*a)->num > (*a)->next->num)
 			ft_printf("%s", sa(a));
 	}
-	else if (max->index == 1)
+	else if (max == (*a)->next)
 	{
 		ft_printf("%s", rra(a));
 		if ((*a)->num > (*a)->next->num)
@@ -91,14 +91,17 @@ void	three_sort(t_stack **a)
 
 void	five_sort(t_stack **a, t_stack **b)
 {
+	t_stack	*cheapest;
+
 	ft_printf("%s", pb(a, b));
 	ft_printf("%s", pb(a, b));
 	three_sort(a);
 	while (count_node(*b))
 	{
 		target_and_price(*a, *b);
-		to_top(b, find_cheapest(*b), 'b');
-		to_top(a, find_cheapest(*b)->target, 'a');
+		cheapest = find_cheapest(*b);
+		to_top(a, cheapest->target, 'a');
+		to_top(b, cheapest, 'b');
 		ft_printf("%s", pa(a, b));
 	}
 	if (!sorted(*a))

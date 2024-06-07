@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 11:49:54 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/06 16:44:03 by quentin          ###   ########.fr       */
+/*   Updated: 2024/06/07 13:11:30 by arabefam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,9 @@ void	to_top(t_stack **head, t_stack *current, char c);
 void	target_and_price(t_stack *a, t_stack *b);
 t_stack	*find_cheapest(t_stack *b);
 void	three_sort(t_stack **a);
-void	five_sort(t_stack **a, t_stack **b);
+void	to_top_cheapest_and_target(t_stack **a, t_stack **b, t_stack *cheap);
 void	sort_descendante(t_stack **a, t_stack **b);
+void	five_sort(t_stack **a, t_stack **b);
 /*-------------INSTRUCTIONS-------------*/
 char	*sa(t_stack **a);
 char	*sb(t_stack **b);
