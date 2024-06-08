@@ -1,43 +1,61 @@
 NAME	=	push_swap
-SRCS	=	$(wildcard ./*.c ./utils/*/**.c)
+NAME_BONUS	=	checker
+SRCS	=	$(wildcard ./push_swap.c ./utils/*/**.c)
 OBJS	=	${SRCS:.c=.o}
+SRCS_BONUS	= $(wildcard ./checker.c ./utils/*/**.c ./get_next_line/*.c)
+OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
-TOTAL_SRCS	=	$(shell echo $(SRCS) | wc -w)
-COMPILE_COUNT	=	0
+COMPILE_COUNT	:=	0
+MAX_MESSAGE_LEN := 40
 
-define	compilation_progress
-	clear
+
+define compilation_progress
 	@$(CC) $(CFLAGS) -c $< -o $@
-	$(eval COMPILE_COUNT = $(shell echo $$(($(COMPILE_COUNT) + 1))))
-	@printf "\e[1;36mCompilation progession:\e[0m \e[1;31m[\e[0m\e[1;32m$(COMPILE_COUNT)\e[0m\e[1;36m/\e[0m\e[1;32m$(TOTAL_SRCS)\e[0m\e[1;31m]\e[0m\n"
-	@sleep 0.2
+	$(eval COMPILE_COUNT := $(shell echo $$(($(COMPILE_COUNT) + 1))))
+	@if [ "$(COMPILE_COUNT)" -eq "1" ]; then \
+		printf "\033[1;92mCompiling sources⏳\033[0m"; \
+		printf "%*s" $(MAX_MESSAGE_LEN) ""; \
+		printf "\r"; \
+	fi;
+	@if [ "$(COMPILE_COUNT)" -eq "$(TOTAL_FILES)" ]; then \
+		printf "\033[1;92mSources compiled⚡\033[0m"; \
+		printf "%*s" $(MAX_MESSAGE_LEN) ""; \
+		printf "\r"; \
+	fi;
+	@sleep 0.1
 endef
+
 all	:	${NAME}
+bonus	:	${NAME_BONUS}
+${NAME}	:	TOTAL_FILES := $(words $(SRCS))
 ${NAME}	:	${OBJS}
 	@make -sC ./libft
 	@make -sC ./ft_printf
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -L./ft_printf -lftprintf -L./ft_printf/utils -lutils -L./libft -lft
-	clear
-	@printf "\e[1;32mCompilation finished⚡\e[0m\n"
+	@printf "\n\e[1;92mPush_swap⚡\e[0m\n"
+${NAME_BONUS}	:	TOTAL_FILES := $(words $(SRCS_BONUS))
+${NAME_BONUS}	:	${OBJS_BONUS}
+	@make -sC ./libft
+	@make -sC ./ft_printf
+	@$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(NAME_BONUS) -L./ft_printf -lftprintf -L./ft_printf/utils -lutils -L./libft -lft
+	@printf "\n\e[1;92mChecker⚡\e[0m\n"
 ./%.o	:	./%.c
 		$(compilation_progress)
 ./utils/%.o	:	./utils/%.c
 		$(compilation_progress)
-clean	:
+clear_screen	:
 	clear
+clean	:
 	@make clean -sC ./libft
 	@make clean -sC ./ft_printf
-	@rm -f ${OBJS}
-	@printf "\e[1;31m[\e[0m\e[1;32mDeleting objects\e[0m\e[1;31m]\e[0m\n"
-	@sleep 1
-	clear
+	@rm -f ${OBJS} ${OBJS_BONUS}
+	@printf "\033[0;101m\033[1;30mDeleting objects\033[0m🚨\n";
+	@sleep 0.5
 fclean	:	clean
-	clear
 	@make fclean -sC ./libft
 	@make fclean -sC ./ft_printf
-	@rm -f ${NAME}
-	@printf "\e[1;31m[\e[0m\e[1;32mDeleting executable\e[0m\e[1;31m]\e[0m\n"
-	@sleep 1
-	clear
+	@rm -f ${NAME} ${NAME_BONUS}
+	@printf "\033[0;101m\033[1;30mDeleting executable\033[0m🚨\n";
+	@sleep 0.5
 re	:	fclean all

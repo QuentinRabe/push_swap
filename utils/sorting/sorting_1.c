@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabefam <arabefam@student.42.fr>          +#+  +:+       +#+        */
+/*   By: quentin <quentin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/06 16:41:21 by quentin           #+#    #+#             */
-/*   Updated: 2024/06/07 12:26:48 by arabefam         ###   ########.fr       */
+/*   Updated: 2024/06/07 18:26:06 by quentin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,18 @@ void	to_top_cheapest_and_target(t_stack **a, t_stack **b, t_stack *cheap)
 
 void	sort_descendante(t_stack **a, t_stack **b)
 {
-	while (count_node(*b) != 3)
-		ft_printf("%s", pb(a, b));
-	three_sort(a);
+	if (count_node(*a) == 4)
+	{
+		while (count_node(*b) != 2)
+			ft_printf("%s", pb(a, b));
+		two_sort(a);
+	}
+	else
+	{
+		while (count_node(*b) != 3)
+			ft_printf("%s", pb(a, b));
+		three_sort(a);
+	}
 	while (count_node(*b))
 	{
 		target_and_price(*a, *b);

@@ -2,20 +2,33 @@ NAME	=	libft.a
 CC	=	cc
 CFLAGS	=	-Wall -Wextra -Werror
 RM	=	rm -f
-SRCS	=	ft_bzero.c ft_isalnum.c ft_isascii.c ft_isalpha.c ft_isdigit.c ft_isprint.c\
-		ft_memchr.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c ft_strlcat.c\
-		ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_atoi.c\
-		ft_memcmp.c ft_strnstr.c ft_strdup.c ft_substr.c ft_calloc.c ft_putchar_fd.c ft_putstr_fd.c\
-		ft_putendl_fd.c ft_putnbr_fd.c ft_striteri.c ft_strmapi.c ft_strjoin.c ft_split.c ft_itoa.c ft_strtrim.c
-BONUSSRCS	=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c\
-				ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+SRCS	=	$(wildcard ./*.c)
 OBJS	=	$(SRCS:.c=.o)
-BONUSOBJS =	$(BONUSSRCS:.c=.o)
+TOTAL_FILES := $(words $(SRCS))
+COMPILE_COUNT	:=	0
+MAX_MESSAGE_LEN := 40
+
+define compilation_progress
+	@$(CC) $(CFLAGS) -c $< -o $@
+	$(eval COMPILE_COUNT := $(shell echo $$(($(COMPILE_COUNT) + 1))))
+	@if [ "$(COMPILE_COUNT)" -eq "1" ]; then \
+		printf "\n\033[1;92mMake LIBFT⏳\033[0m"; \
+		printf "%*s" $(MAX_MESSAGE_LEN) ""; \
+		printf "\r"; \
+	fi;
+	@if [ "$(COMPILE_COUNT)" -eq "$(TOTAL_FILES)" ]; then \
+		printf "\033[1;92mLIBFT⚡\033[0m"; \
+		printf "%*s" $(MAX_MESSAGE_LEN) ""; \
+		printf "\r"; \
+	fi;
+endef
+
+./%.o	:	./%.c
+		$(compilation_progress)
+./utils/%.o	:	./utils/%.c
+		$(compilation_progress)
 
 all	:	$(NAME)
-
-bonus	:	$(NAME) $(BONUSOBJS)
-		ar -rcs $(NAME) $(BONUSOBJS)
 
 $(NAME)	:	$(OBJS)
 		ar -rcs $(NAME) $(OBJS)
