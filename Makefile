@@ -6,13 +6,11 @@ SRCS_BONUS	= $(wildcard ./checker.c ./utils/*/**.c ./get_next_line/*.c)
 OBJS_BONUS	=	${SRCS_BONUS:.c=.o}
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
-COMPILE_COUNT	:=	0
 MAX_MESSAGE_LEN := 40
 
 
 define compilation_progress
 	@$(CC) $(CFLAGS) -c $< -o $@
-	$(eval COMPILE_COUNT := $(shell echo $$(($(COMPILE_COUNT) + 1))))
 	@printf "\033[1;92mCompiling sources⏳\033[0m";
 	@printf "%*s" $(MAX_MESSAGE_LEN) "";
 	@printf "\r";
@@ -24,32 +22,23 @@ all	:	${NAME}
 
 bonus	:	${NAME_BONUS}
 
-${NAME}	:	TOTAL_FILES := $(words $(SRCS))
-
-${NAME}	:	${OBJS} end_compilation
+${NAME}	:	${OBJS}
 	@make -sC ./libft
 	@make -sC ./ft_printf
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) -L./ft_printf -lftprintf -L./ft_printf/utils -lutils -L./libft -lft
-	@printf "\n\e[1;92mPush_swap⚡\e[0m\n"
+	@printf "\n\e[1;92mPUSH_SWAP⚡\e[0m\n"
 
-${NAME_BONUS}	:	TOTAL_FILES := $(words $(SRCS_BONUS))
-
-${NAME_BONUS}	:	${OBJS_BONUS} end_compilation
+${NAME_BONUS}	:	${OBJS_BONUS}
 	@make -sC ./libft
 	@make -sC ./ft_printf
 	@$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(NAME_BONUS) -L./ft_printf -lftprintf -L./ft_printf/utils -lutils -L./libft -lft
-	@printf "\n\e[1;92mChecker⚡\e[0m\n"
-
-end_compilation	:
-	@printf "\033[1;92mSources compiled⚡\033[0m";
-	@printf "%*s" $(MAX_MESSAGE_LEN) "";
-	@printf "\r";
+	@printf "\n\e[1;92mCHECKER⚡\e[0m\n"
 
 ./%.o	:	./%.c
-		$(compilation_progress)
+	$(compilation_progress)
 
 ./utils/%.o	:	./utils/%.c
-		$(compilation_progress)
+	$(compilation_progress)
 
 clean	:
 	@make clean -sC ./libft
